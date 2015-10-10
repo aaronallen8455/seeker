@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+        <link rel="stylesheet" type="text/css" href="seeker.css" media="all" />
+        <script src="jquery.js" type="text/javascript"></script>
+        <script type="application/javascript" src="dragElement.js"></script>
+        <script type="text/javascript" src="seeker.js"></script>
+    </head>
+    <body style="background-repeat:no-repeat; background-image: url(seekerlvl#.jpg); background-color:#EAEAEA;">
+        <div id="boundary" style="position:absolute; top:0px; left:0px;">
+            <div onmousedown="drag(this, event);" class="seeker" style="z-index: 20; border-radius: 27px; position: absolute; left: 633px; top: 338px; width: 200px; height: 200px; background-color: black;">
+            
+            </div>
+    
+    
+    <button id="starter" style="position: absolute; left: 156px; top: 424px;" onmousedown="drag(this, event);">Start</button>
+                <button id="finish" style="position: absolute; left: 997px; top: 131px;" onmousedown="drag(this, event);">Finish</button>
+    
+    </div>
+    </body>
+</html>
