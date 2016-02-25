@@ -121,6 +121,14 @@ window.onload = function () {
         source.playbackRate.value = rate;
         source.start(audioCtx.currentTime + time);
     }
+    
+    document.addEventListener('keydown', function(e) { //show main menu
+        if(parent.showMenu(e) && !seeker[0].started) {
+            location.assign('menu.html');
+            bgMusic.play();
+        }
+    });
+    
     var bgMusic = parent.bgMusic;
     /*bgMusic.loop = true;
     bgMusic.volume = .7;

@@ -5,7 +5,6 @@ window.onload = function() {
     var selector = document.getElementById('selector');
     var starter = document.getElementById('starter');
     
-    
     main.style.marginTop = ($(window).innerHeight()/2 - main.offsetHeight/2) + 'px';
     window.onresize = function() {
         main.style.marginTop = ($(window).innerHeight()/2 - main.offsetHeight/2) + 'px';
@@ -31,7 +30,7 @@ window.onload = function() {
     c.fillText('Normal',147,8);
     c.fillText('Hard',290,8);
     
-    selector.style.left = (skill.offsetLeft - selector.offsetLeft) + 151 + 'px';
+    selector.style.left = parent.skillPos || (skill.offsetLeft - selector.offsetLeft) + 151 + 'px';
     selector.style.top = -35 + 'px';
     selector.onmousedown = function(e){drag(this, e);};
     
@@ -65,10 +64,11 @@ window.onload = function() {
     }
     
     starter.onclick = function() {
+        parent.skillPos = selector.style.left;
         var x = (selector.offsetLeft - (skill.offsetLeft - 1))/50
         x = .008 * Math.pow(x, 3) + .2 * x + 1;
         x = x.toFixed(2);
-        location.assign('seekerlvl1.html' + '?' + x);
+        location.assign((parent.hist?parent.hist:'seekerlvl1.html') + '?' + x);
     }
     
 }
